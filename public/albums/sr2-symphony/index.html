@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Streets of Rage 2 - Symphony</title>
+<link rel="stylesheet" href="../../style.css"></head>
+<body><div class="wrap">
+<header class="site"><a class="brand" href="../../index.html">Nintenphonia</a><span>Orchestral video game music</span></header>
+<div class="album"><div><img class="cover" src="cover.jpg" alt="Cover"></div><div><h1>Streets of Rage 2 - Symphony</h1><a class="btn" href="https://nintenvana.gumroad.com/l/SOR2O" target="_blank" rel="noopener">Get this album</a><ol class="tracks"><li><span class="n">1</span><button data-src="t01.mp3" aria-label="Play Intro">&#9654;</button><span class="t">Intro</span><span class="bar"><i></i></span></li><li><span class="n">2</span><button data-src="t02.mp3" aria-label="Play Go Straight">&#9654;</button><span class="t">Go Straight</span><span class="bar"><i></i></span></li><li><span class="n">3</span><button data-src="t03.mp3" aria-label="Play Player Select">&#9654;</button><span class="t">Player Select</span><span class="bar"><i></i></span></li><li><span class="n">4</span><button data-src="t04.mp3" aria-label="Play In the Bar">&#9654;</button><span class="t">In the Bar</span><span class="bar"><i></i></span></li><li><span class="n">5</span><button data-src="t05.mp3" aria-label="Play Never Return Alive">&#9654;</button><span class="t">Never Return Alive</span><span class="bar"><i></i></span></li><li><span class="n">6</span><button data-src="t06.mp3" aria-label="Play Spin on the Bridge">&#9654;</button><span class="t">Spin on the Bridge</span><span class="bar"><i></i></span></li><li><span class="n">7</span><button data-src="t07.mp3" aria-label="Play Ready Funk">&#9654;</button><span class="t">Ready Funk</span><span class="bar"><i></i></span></li><li><span class="n">8</span><button data-src="t08.mp3" aria-label="Play Dreamer">&#9654;</button><span class="t">Dreamer</span><span class="bar"><i></i></span></li><li><span class="n">9</span><button data-src="t09.mp3" aria-label="Play Alien Power">&#9654;</button><span class="t">Alien Power</span><span class="bar"><i></i></span></li><li><span class="n">10</span><button data-src="t10.mp3" aria-label="Play Under Logic">&#9654;</button><span class="t">Under Logic</span><span class="bar"><i></i></span></li><li><span class="n">11</span><button data-src="t11.mp3" aria-label="Play Too Deep">&#9654;</button><span class="t">Too Deep</span><span class="bar"><i></i></span></li><li><span class="n">12</span><button data-src="t12.mp3" aria-label="Play Slow Moon">&#9654;</button><span class="t">Slow Moon</span><span class="bar"><i></i></span></li><li><span class="n">13</span><button data-src="t13.mp3" aria-label="Play Wave 131">&#9654;</button><span class="t">Wave 131</span><span class="bar"><i></i></span></li><li><span class="n">14</span><button data-src="t14.mp3" aria-label="Play Jungle Base">&#9654;</button><span class="t">Jungle Base</span><span class="bar"><i></i></span></li><li><span class="n">15</span><button data-src="t15.mp3" aria-label="Play Back to the Industry">&#9654;</button><span class="t">Back to the Industry</span><span class="bar"><i></i></span></li><li><span class="n">16</span><button data-src="t16.mp3" aria-label="Play Expander">&#9654;</button><span class="t">Expander</span><span class="bar"><i></i></span></li><li><span class="n">17</span><button data-src="t17.mp3" aria-label="Play Max Man">&#9654;</button><span class="t">Max Man</span><span class="bar"><i></i></span></li><li><span class="n">18</span><button data-src="t18.mp3" aria-label="Play Revenge of Mr. X">&#9654;</button><span class="t">Revenge of Mr. X</span><span class="bar"><i></i></span></li><li><span class="n">19</span><button data-src="t19.mp3" aria-label="Play Good Ending">&#9654;</button><span class="t">Good Ending</span><span class="bar"><i></i></span></li><li><span class="n">20</span><button data-src="t20.mp3" aria-label="Play Little Money Avenue">&#9654;</button><span class="t">Little Money Avenue</span><span class="bar"><i></i></span></li></ol><p class="note">20-second previews.</p></div></div>
+<footer>Previews are short, low-quality excerpts. Original compositions belong to their respective owners.</footer>
+</div><script>
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault()});
+  var audio=new Audio();audio.preload='none';audio.controlsList='nodownload';
+  var cur=null;
+  function reset(b){if(b){b.textContent='\u25B6';var i=b.parentNode.querySelector('.bar i');if(i)i.style.width='0'}}
+  document.querySelectorAll('.tracks button').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(cur===b){audio.pause();reset(b);cur=null;return}
+      reset(cur);cur=b;audio.src=b.dataset.src;audio.play();b.textContent='\u275A\u275A';
+    });
+  });
+  audio.addEventListener('timeupdate',function(){
+    if(!cur||!audio.duration)return;
+    cur.parentNode.querySelector('.bar i').style.width=(audio.currentTime/audio.duration*100)+'%';
+  });
+  audio.addEventListener('ended',function(){reset(cur);cur=null});
+})();
+</script></body></html>
