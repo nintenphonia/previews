@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zelda Wind Waker Arabian</title>
+<link rel="stylesheet" href="../../style.css"></head>
+<body><div class="wrap">
+<header class="site"><a class="brand" href="../../index.html">Nintenphonia</a><span>Orchestral video game music</span></header>
+<div class="album"><div><img class="cover" src="cover.jpg" alt="Cover"></div><div><h1>Zelda Wind Waker Arabian</h1><a class="btn" href="https://nintenvana.gumroad.com/l/windwaker" target="_blank" rel="noopener">Get this album</a><ol class="tracks"><li><span class="n">1</span><button data-src="t01.mp3" aria-label="Play Dragon Roost Island V2">&#9654;</button><span class="t">Dragon Roost Island V2</span><span class="bar"><i></i></span></li><li><span class="n">2</span><button data-src="t02.mp3" aria-label="Play Dragon Roost Island">&#9654;</button><span class="t">Dragon Roost Island</span><span class="bar"><i></i></span></li><li><span class="n">3</span><button data-src="t03.mp3" aria-label="Play Fairy Springs">&#9654;</button><span class="t">Fairy Springs</span><span class="bar"><i></i></span></li><li><span class="n">4</span><button data-src="t04.mp3" aria-label="Play Farewell Hyrule King">&#9654;</button><span class="t">Farewell Hyrule King</span><span class="bar"><i></i></span></li><li><span class="n">5</span><button data-src="t05.mp3" aria-label="Play Grandma">&#9654;</button><span class="t">Grandma</span><span class="bar"><i></i></span></li><li><span class="n">6</span><button data-src="t06.mp3" aria-label="Play Inside a House">&#9654;</button><span class="t">Inside a House</span><span class="bar"><i></i></span></li><li><span class="n">7</span><button data-src="t07.mp3" aria-label="Play Outset island">&#9654;</button><span class="t">Outset island</span><span class="bar"><i></i></span></li><li><span class="n">8</span><button data-src="t08.mp3" aria-label="Play The Great Sea">&#9654;</button><span class="t">The Great Sea</span><span class="bar"><i></i></span></li><li><span class="n">9</span><button data-src="t09.mp3" aria-label="Play The Legendary Hero">&#9654;</button><span class="t">The Legendary Hero</span><span class="bar"><i></i></span></li><li><span class="n">10</span><button data-src="t10.mp3" aria-label="Play Tittle Theme">&#9654;</button><span class="t">Tittle Theme</span><span class="bar"><i></i></span></li><li><span class="n">11</span><button data-src="t11.mp3" aria-label="Play Windfall Island">&#9654;</button><span class="t">Windfall Island</span><span class="bar"><i></i></span></li></ol><p class="note">20-second previews.</p></div></div>
+<footer>Previews are short, low-quality excerpts. Original compositions belong to their respective owners.</footer>
+</div><script>
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault()});
+  var audio=new Audio();audio.preload='none';audio.controlsList='nodownload';
+  var cur=null;
+  function reset(b){if(b){b.textContent='\u25B6';var i=b.parentNode.querySelector('.bar i');if(i)i.style.width='0'}}
+  document.querySelectorAll('.tracks button').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(cur===b){audio.pause();reset(b);cur=null;return}
+      reset(cur);cur=b;audio.src=b.dataset.src;audio.play();b.textContent='\u275A\u275A';
+    });
+  });
+  audio.addEventListener('timeupdate',function(){
+    if(!cur||!audio.duration)return;
+    cur.parentNode.querySelector('.bar i').style.width=(audio.currentTime/audio.duration*100)+'%';
+  });
+  audio.addEventListener('ended',function(){reset(cur);cur=null});
+})();
+</script></body></html>
