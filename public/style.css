@@ -25,5 +25,8 @@ color:var(--acc);cursor:pointer;font-size:14px;flex:none}
 .tracks .t{flex:1}.bar{height:3px;background:var(--line);border-radius:2px;width:90px;flex:none}
 .bar i{display:block;height:100%;width:0;background:var(--acc);border-radius:2px}
 .note{color:var(--mut);font-size:13px;margin-top:18px}
+h2{font-size:20px;margin:34px 0 14px;color:var(--acc);letter-spacing:.04em}
+.card.bundle{border-color:var(--acc)}
+.badge{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
 footer{margin-top:48px;color:var(--mut);font-size:12px}
 @media(max-width:640px){.album{grid-template-columns:1fr}.bar{display:none}}
