@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mega Arabian 9</title>
+<link rel="stylesheet" href="../../style.css"></head>
+<body><div class="wrap">
+<header class="site"><a class="brand" href="../../index.html">Nintenphonia</a><span>Orchestral video game music</span></header>
+<div class="album"><div><img class="cover" src="cover.jpg" alt="Cover"></div><div><h1>Mega Arabian 9</h1><a class="btn" href="https://nintenvana.gumroad.com/l/megaman-9-arabian-remix" target="_blank" rel="noopener">Get this album</a><ol class="tracks"><li><span class="n">1</span><button data-src="t01.mp3" aria-label="Play Boss">&#9654;</button><span class="t">Boss</span><span class="bar"><i></i></span></li><li><span class="n">2</span><button data-src="t02.mp3" aria-label="Play Castle of Evil (Dr. Wily Stage 4)">&#9654;</button><span class="t">Castle of Evil (Dr. Wily Stage 4)</span><span class="bar"><i></i></span></li><li><span class="n">3</span><button data-src="t03.mp3" aria-label="Play Concrete Jungle (Concrete Man Stage)">&#9654;</button><span class="t">Concrete Jungle (Concrete Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">4</span><button data-src="t04.mp3" aria-label="Play Ending">&#9654;</button><span class="t">Ending</span><span class="bar"><i></i></span></li><li><span class="n">5</span><button data-src="t05.mp3" aria-label="Play Flash in the Dark (Dr. Wily Stage 1)">&#9654;</button><span class="t">Flash in the Dark (Dr. Wily Stage 1)</span><span class="bar"><i></i></span></li><li><span class="n">6</span><button data-src="t06.mp3" aria-label="Play Galaxy Fantasy (Galaxy Man Stage)">&#9654;</button><span class="t">Galaxy Fantasy (Galaxy Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">7</span><button data-src="t07.mp3" aria-label="Play Hornet Dance (Hornet Man Stage)">&#9654;</button><span class="t">Hornet Dance (Hornet Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">8</span><button data-src="t08.mp3" aria-label="Play Jewel Temptation (Jewel Man Stage)">&#9654;</button><span class="t">Jewel Temptation (Jewel Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">9</span><button data-src="t09.mp3" aria-label="Play Magma Burning (Magma Man Stage)">&#9654;</button><span class="t">Magma Burning (Magma Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">10</span><button data-src="t10.mp3" aria-label="Play Menu">&#9654;</button><span class="t">Menu</span><span class="bar"><i></i></span></li><li><span class="n">11</span><button data-src="t11.mp3" aria-label="Play Opening">&#9654;</button><span class="t">Opening</span><span class="bar"><i></i></span></li><li><span class="n">12</span><button data-src="t12.mp3" aria-label="Play Overdrive Scramble (Special Stage)">&#9654;</button><span class="t">Overdrive Scramble (Special Stage)</span><span class="bar"><i></i></span></li><li><span class="n">13</span><button data-src="t13.mp3" aria-label="Play Plug Electric (Plug Man Stage)">&#9654;</button><span class="t">Plug Electric (Plug Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">14</span><button data-src="t14.mp3" aria-label="Play Shop">&#9654;</button><span class="t">Shop</span><span class="bar"><i></i></span></li><li><span class="n">15</span><button data-src="t15.mp3" aria-label="Play Splash Blue (Splash Woman Stage)">&#9654;</button><span class="t">Splash Blue (Splash Woman Stage)</span><span class="bar"><i></i></span></li><li><span class="n">16</span><button data-src="t16.mp3" aria-label="Play Stage Select">&#9654;</button><span class="t">Stage Select</span><span class="bar"><i></i></span></li><li><span class="n">17</span><button data-src="t17.mp3" aria-label="Play Strange World (Dr. Wily Stage 3)">&#9654;</button><span class="t">Strange World (Dr. Wily Stage 3)</span><span class="bar"><i></i></span></li><li><span class="n">18</span><button data-src="t18.mp3" aria-label="Play Thunder Tornado (Tornado Man Stage)">&#9654;</button><span class="t">Thunder Tornado (Tornado Man Stage)</span><span class="bar"><i></i></span></li><li><span class="n">19</span><button data-src="t19.mp3" aria-label="Play We&#x27;re the Robots (Dr. Wily Stage 2)">&#9654;</button><span class="t">We&#x27;re the Robots (Dr. Wily Stage 2)</span><span class="bar"><i></i></span></li><li><span class="n">20</span><button data-src="t20.mp3" aria-label="Play Wily Machine">&#9654;</button><span class="t">Wily Machine</span><span class="bar"><i></i></span></li></ol><p class="note">20-second previews.</p></div></div>
+<footer>Previews are short, low-quality excerpts. Original compositions belong to their respective owners.</footer>
+</div><script>
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault()});
+  var audio=new Audio();audio.preload='none';audio.controlsList='nodownload';
+  var cur=null;
+  function reset(b){if(b){b.textContent='\u25B6';var i=b.parentNode.querySelector('.bar i');if(i)i.style.width='0'}}
+  document.querySelectorAll('.tracks button').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(cur===b){audio.pause();reset(b);cur=null;return}
+      reset(cur);cur=b;audio.src=b.dataset.src;audio.play();b.textContent='\u275A\u275A';
+    });
+  });
+  audio.addEventListener('timeupdate',function(){
+    if(!cur||!audio.duration)return;
+    cur.parentNode.querySelector('.bar i').style.width=(audio.currentTime/audio.duration*100)+'%';
+  });
+  audio.addEventListener('ended',function(){reset(cur);cur=null});
+})();
+</script></body></html>
