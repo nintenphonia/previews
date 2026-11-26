@@ -163,3 +163,13 @@ footer.foot{margin:46px 0 0;padding:22px 0 calc(34px + env(safe-area-inset-botto
 .info .desc+.btn{margin-top:22px}
 .sec,.included{scroll-margin-top:78px}
 @media(min-width:900px){.chips{flex-wrap:wrap;overflow:visible}.chips .sep{height:30px}}
+html,body{overflow-x:clip}
+.search{min-width:0}
+.search input{width:100%;text-overflow:ellipsis}
+.top .in{min-width:0}
+@media(max-width:720px){
+  .top .in{padding-inline:14px;gap:10px}
+  .wm{font-size:21px}
+  .search{height:42px;padding:0 13px;gap:8px}
+}
+@media(max-width:380px){.wm{font-size:19px}}
